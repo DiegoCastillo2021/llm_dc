@@ -51,3 +51,24 @@ curl -X POST http://localhost:11434/api/generate -d '{
   "stream": false
 }'
 ````
+
+## 5. Realizar request a groq
+
+Realizar consultas a groq
+
+````bash
+curl "https://api.groq.com/openai/v1/chat/completions" \
+  -X POST \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer ${GROQ_API_KEY}" \
+  -d '{
+         "messages": [
+           {
+             "role": "user",
+             "content": "¿por qué el cielo es azul?"
+           }
+         ],
+         "model": "gemma-7b-it",
+         "stream": false
+       }'
+````
